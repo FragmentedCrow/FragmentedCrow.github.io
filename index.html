@@ -35,7 +35,7 @@
 	Learn Japenese
 	</h1>
 	<div id="StartId"><div class="type">
-		Duolingo Course <input type="radio" name="type"> <ul>
+		Duolingo Course <input type="radio" name="type" checked> <ul>
 		<li>(Su, Shi, U, Ko) - す、し、う、こ <input type="checkbox" id="char1"></li>
 		<li>(A, Ka, Sa, I) - あ、か、さ、い <input type="checkbox" id="char2"></li>
 		<li>(E, Mi, Chi, Wa) - え、み、ち、わ <input type="checkbox" id="char3"></li>
@@ -51,53 +51,55 @@
 	
 	<div id="CourseId">
 		<p id="charJap">"A"</p>
-		<input type="button" id="charEng" value="Show Character Name" onclick="showChar()" ><br><br>
-		<input type="button" value="New Character" onclick="showJapChar()" class="bnt1">
+		<input type="button" id="charEng" value="Show Character" onclick="showChar()" ><br><br>
+		<input type="button" value="New Hirigana Character" onclick="showJapChar()" class="bnt1">
+		<input type="button" value="New Romanize Character" onclick="showRomChar()" class="bnt1">
 	</div>
 	
 	<script>
 	let JapChar = [];
-	let Char = "";
+	let RomChar = [];
+	let Numb = "";
+	let Type = "Hirigana";
 	document.getElementById("CourseId").style.visibility="hidden";
 	function funStart() {
 		if (document.getElementById("char1").checked == true) {
 			JapChar.push("す", "し", "う", "こ");
+			RomChar.push("Su", "Shi", "U", "Ko");
 		}
 		if (document.getElementById("char2").checked == true) {
 			JapChar.push("あ", "か", "さ", "い");
+			RomChar.push("A", "Ka", "Sa", "I");
 		}
 		if (document.getElementById("char3").checked == true) {
 			JapChar.push("え", "み", "ち", "わ");
+			RomChar.push("E", "Mi", "Chi", "Wa");
 		}
 		if (document.getElementById("char4").checked == true) {
 			JapChar.push("き", "ん", "お", "た");
+			RomChar.push("Ki", "Ni", "O", "Ta");
 		}
 		document.getElementById("CourseId").style.visibility="visible";
 		document.getElementById("StartId").remove();
 		showJapChar();
 	}
 	function showJapChar() {
-		Char = JapChar[Math.floor(Math.random()*JapChar.length)];
-		document.getElementById("charJap").innerHTML='" '+Char+' "';
+		Numb = Math.floor(Math.random()*JapChar.length);
+		document.getElementById("charJap").innerHTML='" '+JapChar[Numb]+' "';
 		document.getElementById("charEng").value='( " ? " )';
+		Type = "Hirigana";
 	}
 	function showChar() {
-		let txt=document.getElementById("charEng");
-		txt.value="test";
-		switch(Char) {
-		case "す": txt.value='( "Su" )'; break;
-		case "し": txt.value='( "Shi" )'; break;
-		case "う": txt.value='( "U" )'; break;
-		case "こ": txt.value='( "Ko" )'; break;
-		case "あ": txt.value='( "A" )'; break;
-		case "か": txt.value='( "Ka" )'; break;
-		case "さ": txt.value='( "Sa" )'; break;
-		case "い": txt.value='( "I" )'; break;
-		case "え": txt.value='( "E" )'; break;
-		case "み": txt.value='( "Mi" )'; break;
-		case "ち": txt.value='( "Chi" )'; break;
-		case "わ": txt.value='( "Wa" )'; break;
-		}
+		if (Type=="Hirigana") {
+		document.getElementById("charEng").value='( "'+RomChar[Numb]+'" )'; }
+		else {
+		document.getElementById("charEng").value='( "'+JapChar[Numb]+'" )'; }
+	}
+	function showRomChar() {
+		Numb = Math.floor(Math.random()*JapChar.length);
+		document.getElementById("charJap").innerHTML='" '+RomChar[Numb]+' "';
+		document.getElementById("charEng").value='( " ? " )';
+		Type = "Hirigana";
 	}
 	</script>
 
