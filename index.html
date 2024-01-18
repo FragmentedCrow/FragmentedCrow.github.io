@@ -35,7 +35,7 @@
 </head>
 <body>
 	<h1>
-	Learn Japenese
+	Learn Japanese's
 	</h1>
 	<div id="StartId"><div class="type">
 		Duolingo Course <input type="radio" name="type" checked> <ul>
@@ -43,7 +43,8 @@
 		<li>(A, Ka, Sa, I) - あ、か、さ、い <input type="checkbox" id="char2"></li>
 		<li>(E, Mi, Chi, Wa) - え、み、ち、わ <input type="checkbox" id="char3"></li>
 		<li>(Ki, N, O, Ta) -　き、ん、お、た <input type="checkbox" id="char4"></li>
-		</ul>
+	<input type="checkbox" id="char5">
+</ul>
 	</div><br>
 	<div class="type">
 	<input type="radio" name="type">
@@ -66,7 +67,7 @@
 	let Type = "Hirigana";
 	document.getElementById("CourseId").style.visibility="hidden";
 	function funStart() {
-		if (document.getElementById("char1").checked == true) {
+		if (document.getElementよById("char1").checked == true) {
 			JapChar.push("す", "し", "う", "こ");
 			RomChar.push("Su", "Shi", "U", "Ko");
 		}
@@ -81,6 +82,9 @@
 		if (document.getElementById("char4").checked == true) {
 			JapChar.push("き", "ん", "お", "た");
 			RomChar.push("Ki", "Ni", "O", "Ta");
+		}
+		if (document.getElementById("char5").checked == true) {
+			JapChar.push("り","ら","つ","よ");
 		}
 		document.getElementById("CourseId").style.visibility="visible";
 		document.getElementById("StartId").remove();
