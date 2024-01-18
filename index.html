@@ -3,7 +3,7 @@
 
 	<style>
 	.type {
-	background-color: #CCCCCC;
+	background-color: #e897e5;
 	width: 30vw;
 	padding:10px;
 	}
@@ -71,7 +71,7 @@ background-attachment: fixed;">
 	<h1>Learn Japaneses characters</h1>
 	<img src="https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-japanese-poster-japan-tourism-japanese-zephyr-image_16665.jpg">
 	</div>
-	<div id="StartId"><div class="type">
+	<div id="StartId" style="margin-top:10vh;"><div class="type">
 		Duolingo Course <input type="radio" name="type" checked> <ul>
 		<li>(Su, Shi, U, Ko) - す、し、う、こ <input type="checkbox" id="char1"></li>
 		<li>(A, Ka, Sa, I) - あ、か、さ、い <input type="checkbox" id="char2"></li>
@@ -87,7 +87,7 @@ background-attachment: fixed;">
 	<input type="button" value="Start Lesson" onclick="funStart()">
 	</div>
 	
-	<div id="CourseId">
+	<div id="CourseId" style="margin-top:10vh;">
 		<p id="charJap">"A"</p>
 		<input type="button" id="charEng" value="Show Character" onclick="showChar()" ><br><br>
 		<input type="button" value="New Hirigana Character" onclick="showJapChar()" class="bnt1"><br>
@@ -118,7 +118,7 @@ background-attachment: fixed;">
 			RomChar.push("Ki", "Ni", "O", "Ta");
 		}
 		if (document.getElementById("char5").checked == true) {
-			JapChar.push("り","ら","つ","よ");
+			JapChar.push("り", "ら", "つ", "よ");
 			RomChar.push("Ri", "Ra", "Tsu", "Yu");
 		}
 		document.getElementById("CourseId").style.visibility="visible";
