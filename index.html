@@ -1,75 +1,8 @@
 <html>
 <head>
 
-	<style>
-	.type {
-	background-color: #ebcce9;
-	width: 30vw;
-	padding:10px;
-	}
-	input {
-	background-color: #ebcce9;
-	}
-	#charJap {
-	font-size: 60px;
-	margin: 0;
-	}
-	#charEng {
-	padding: 6px 8px;
-	text-align: center;
-	font-size: 16px;
-	width:140px;
-	margin-left: 40px; 
-	}
-	.bnt1 {
-	text-align: center;
-	width:180px;
-	padding: 6px 8px;
-	margin-left: 20px; 
-	}
-	h1 {
-	position:absolute;
-	top:50%;
-	bottom:50%;
-	color: black;
-	font-size: 50px;
-	text-align: center;
-	-webkit-text-stroke-width: 3px; 
-	-webkit-text-stroke-color: black;
-	font-weight: 900;
-	left:50%;
-	right:50%;
-	}
-	img {
-	position:absolute;
-	top:0%;
-	width:100%;
-	height:100%;
-	background-position: center;
-	background-size: cover;
-	z-index:-2;
-	}
-	footer {
-	position:fixed;
-	background-color:white;
-	bottom:0;
-	padding:15px;
-	left:0;
-	height:1vh;
-	width:100%;
-	border-bottom: solid 5px black;
-	background-color:black;
-	color:white;
-	}
-	.header {
-	position: relative;
-	top:0;
-	width:100%;
-	height:30vh;
-	left:0;
-	border-bottom: solid 5px black;
-	}
-	</style>
+<link rel="icon" type="image/png" href="images\pixelBlossom.png">
+<link rel="stylesheet" href="japaneseStyle.css">
 
 </head>
 <body>
@@ -77,29 +10,31 @@
 	Website by Raven aka FragmentedCrow
 	</footer>
 	
-	<div class="header">
+	<div class="header" id="header">
 	<h1>Learn Japaneses characters</h1>
-	<img src="https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-japanese-poster-japan-tourism-japanese-zephyr-image_16665.jpg">
+	<img src="https://img.freepik.com/premium-photo/traditional-japanese-background-with-waves-flower-texture-oriental-natural-watercolo_76964-2239.jpg">
 	</div>
 	<div id="StartId" style="margin-top:10vh;"><div class="type">
-		Duolingo Course <input type="radio" name="type" checked> <ul>
-		<li>(Su, Shi, U, Ko) - す、し、う、こ <input type="checkbox" id="char1"></li>
+		Hirigana Course <input type="radio" name="type" checked> <ul>
+		<li>(Su, Shi, U, Ko) - す、し、う、こ <input type="checkbox" id="char1" checked></li>
 		<li>(A, Ka, Sa, I) - あ、か、さ、い <input type="checkbox" id="char2"></li>
 		<li>(E, Mi, Chi, Wa) - え、み、ち、わ <input type="checkbox" id="char3"></li>
 		<li>(Ki, N, O, Ta) -　き、ん、お、た <input type="checkbox" id="char4"></li>
 		<li>(Ri, Ra, Tsu, Yu) -　り、ら、つ、よ <input type="checkbox" id="char5"></li>
+		<li>(Ha, So, Ma, Te) -　は、そ、ま、て <input type="checkbox" id="char6"></li>
+		<li>(Ku, Mo, Se, Na) -　く、も、せ、な <input type="checkbox" id="char7"></li>
+		<li>(Fu, Ke, Ne, Ni) -　ふ、け、ね、に <input type="checkbox" id="char8"></li>
+		<li>(Nu, Hi, Ho, Ru) -　ぬ、ひ、ほ、る <input type="checkbox" id="char9"></li>
+		<li>(He, Ya, No, Mu, Re) -　へ、ざ、の、む、れ <input type="checkbox" id="char10"></li>
+		<li>(Wo, Yo, Me, To, Ro) -　を、ぞ、め、と、ろ <input type="checkbox" id="char11"></li>
 	</ul>
 	</div><br>
-	<div class="type">
-	<input type="radio" name="type">
-	<input type="text">
-	</div><br>
-	<input type="button" value="Start Lesson" onclick="funStart()">
+	<input type="button" value="Start Lesson" onclick="funStart()"class="bnt1">
 	</div>
 	
 	<div id="CourseId" style="margin-top:10vh;">
 		<p id="charJap">"A"</p>
-		<input type="button" id="charEng" value="Show Character" onclick="showChar()" ><br><br>
+		<input type="button" id="charEng" class="bnt1" value="Show Character" onclick="showChar()"><br><br>
 		<input type="button" value="New Hirigana Character" onclick="showJapChar()" class="bnt1"><br>
 		<input type="button" value="New Romanized Character" onclick="showRomChar()" class="bnt1">
 	</div>
@@ -131,8 +66,33 @@
 			JapChar.push("り", "ら", "つ", "よ");
 			RomChar.push("Ri", "Ra", "Tsu", "Yu");
 		}
+		if (document.getElementById("char6").checked == true) {
+			JapChar.push("は","そ","ま","て");
+			RomChar.push("Ha", "So", "Ma", "Te");
+		}
+		if (document.getElementById("char7").checked == true) {
+			JapChar.push("く","も","せ","な");
+			RomChar.push("Ku", "Mo", "Se", "Na");
+		}
+		if (document.getElementById("char8").checked == true) {
+			JapChar.push("ふ","け","ね","に");
+			RomChar.push("Fu", "Ke", "Ne", "Ni");
+		}
+		if (document.getElementById("char9").checked == true) {
+			JapChar.push("ぬ","ひ","ほ","る");
+			RomChar.push("Nu", "Hi", "Ho", "Ru");
+		}
+		if (document.getElementById("char10").checked == true) {
+			JapChar.push("へ","ざ","の","む","れ");
+			RomChar.push("He", "Ya", "No", "Mu", "Re");
+		}
+		if (document.getElementById("char11").checked == true) {
+			JapChar.push("を","ぞ","め","と","ろ");
+			RomChar.push("Wo", "Yo", "Me", "To", "Ro");
+		}
 		document.getElementById("CourseId").style.visibility="visible";
 		document.getElementById("StartId").remove();
+		document.getElementById("header").remove();
 		showJapChar();
 	}
 	function showJapChar() {
